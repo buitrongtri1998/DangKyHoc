@@ -5,7 +5,10 @@ const hocvienSchema = new mongoose.Schema({
     SoDT: String,
     ThanhToan: Boolean,
     Vi: String,
-    Ngay: Date
+    Ngay: Date,
+    srcBackground: String,
+    srcHead: String,
+    srcBody: String
 });
 
 module.exports = mongoose.model("Hocvien", hocvienSchema);

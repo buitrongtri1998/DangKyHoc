@@ -31,7 +31,7 @@
             position: absolute;
             top: 0px;
             left: 0px;
-            z-index: 4;
+            z-index: 1;
         }
 
         .image2 {
@@ -40,7 +40,7 @@
             position: absolute;
             top: 0px;
             left: 0px;
-            z-index: 4;
+            z-index: 2;
         }
 
         .image3 {
@@ -49,7 +49,26 @@
             position: absolute;
             top: 0px;
             left: 0px;
-            z-index: 4;
+            z-index: 3;
+        }
+
+        .checkboxBackground{
+            position: absolute;
+            top: 10%;
+            right: 20%;
+            z-index: 99;
+        }
+        .checkboxHead{
+            position: absolute;
+            top: 10%;
+            right: 20%;
+            z-index: 99;
+        }
+        .checkboxBody{
+            position: absolute;
+            top: 10%;
+            right: 20%;
+            z-index: 99;
         }
     </style>
 </head>
@@ -59,56 +78,57 @@
         <div class="row" style="margin-top: 20px;">
             <h1 style="width: 100%; text-align: center; color: red;">ĐĂNG KÝ HỌC</h1>
         </div>
+        <hr>
         <div class="row">
-            <div class="col border">
-                <div class="row" style="margin: 10px 0 0 40%;">
-                    <button id="connectMM" class="btn btn-primary" style="margin-left: 20px">Đăng nhập MetaMask</button>
-                </div>
-                <div class="row" style="margin-left: 20%;">
-                    <div id="frmDangKy" class="form" style="margin: 20px 0 0 0; width: 100%;">
-                        <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Họ tên: </label>
-                            <div class="col-sm-10">
-                                <input id="txtHoTen" class="form-control" type="text" placeholder="Nhập họ và tên"
-                                    style="width: 70%">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Email: </label>
-                            <div class="col-sm-10">
-                                <input id="txtEmail" class="form-control" type="email" placeholder="Nhập Email"
-                                    style="width: 70%">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Số điện thoại: </label>
-                            <div class="col-sm-10">
-                                <input id="txtSoDT" class="form-control" type="text" placeholder="Nhập số điện thoại"
-                                    style="width: 70%">
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
+            <div class="col">
+                <label>Họ tên: </label>
+                <input id="txtHoTen" class="form-control" type="text" placeholder="Nhập họ và tên">
+            </div>
+            <div class="col">
+                <label>Email: </label>
+                <input id="txtEmail" class="form-control" type="email" placeholder="Nhập Email">
             </div>
 
-            <div class="col-4 border">
-                <div class="row" style="width: 90%; height: 75%;">
-                    <div class="parent">
-                        <img class="image1" id="imgRanBackground" width="100%" height="100%" src="https://lh3.googleusercontent.com/pw/AM-JKLUdJqkAwZ9KNhnEG5Ka9w3rT-hKPE9ZiATpn9VcABWSEFyvQcjzqTaQkphuntVvpfKkWqt3ENq491zr0hjkBpQ2yn44ih4fEja-YLXlitYlYUsVx1R5J1KvnWviJF-cFnql21JphcF8Y2-JFsvJJMX9=s500-no?authuser=0">
-                        <img class="image2" id="imgRanHead" width="100%" height="100%" src="https://lh3.googleusercontent.com/pw/AM-JKLWD9WPOSj39d9lbYAb48jBrtvjzT1Fk0KPe80KbyPawVpIAADB4krppX-bOGVJYGu6u85PFvMIu0rbSVQ0hOi8MXdwLzNpBHUxpEesfPqxZrZW9Dhut7D9HtiIDpWu-mzIB1rnB60-eMEmvVNF7d5SO=s500-no?authuser=0">
-                        <img class="image3" id="imgRanBody" width="100%" height="100%" src="https://lh3.googleusercontent.com/pw/AM-JKLW3pgVOp6txNRQBSSWrHAeTCjAESp-_CHOTmaFdafXi5jsouDu4mNrB4yJ4-pXhWwzCOJV_W0HvLsjgPR5cCfVHCYfIMkvrtKOGAbC8u0BPz1zN_51kXszDMKskkesDWLEpfyReiGYUSyakM67iJJhR=s500-no?authuser=0">
-                    </div>
-                </div>
-
-                <div class="row" style="margin-right: 10px; float: right;">
-                    <button id="btnRanImg" class="btn btn-primary">Đổi avatar</button>
-                    <button id="btnDangKy" class="btn btn-primary" style="margin-left: 10px;">Đăng ký</button>
-                </div>
+            <div class="col">
+                <label>Số điện thoại: </label>
+                <input id="txtSoDT" class="form-control" type="text" placeholder="Nhập số điện thoại">
             </div>
-
         </div>
+        <hr>
+        <div class="row">
+            <div class="col-2">
+                <button class="btn btn-success" id="btnBackground" style="width: 90%; height: 60pxp;">Khung nền</button>
+                <button class="btn btn-success" id="btnHead" style="width: 90%; height: 60pxp; margin-top: 10px">Phần
+                    đầu</button>
+                <button class="btn btn-success" id="btnBody" style="width: 90%; height: 60pxp; margin-top: 10px">Phần
+                    thân</button>
+            </div>
+            <div class="col border" >
+                <div class="row" id="listPic">
+                    
+                </div>
+            </div>
+            <div class="col-2 text-center">
+                <div class="parent">
+                    <img class="image1" id="imgRanBackground" width="100%" height="100%"
+                        src="https://lh3.googleusercontent.com/pw/AM-JKLUdJqkAwZ9KNhnEG5Ka9w3rT-hKPE9ZiATpn9VcABWSEFyvQcjzqTaQkphuntVvpfKkWqt3ENq491zr0hjkBpQ2yn44ih4fEja-YLXlitYlYUsVx1R5J1KvnWviJF-cFnql21JphcF8Y2-JFsvJJMX9=s500-no?authuser=0">
+                    <img class="image2" id="imgRanHead" width="100%" height="100%"
+                        src="https://lh3.googleusercontent.com/pw/AM-JKLWD9WPOSj39d9lbYAb48jBrtvjzT1Fk0KPe80KbyPawVpIAADB4krppX-bOGVJYGu6u85PFvMIu0rbSVQ0hOi8MXdwLzNpBHUxpEesfPqxZrZW9Dhut7D9HtiIDpWu-mzIB1rnB60-eMEmvVNF7d5SO=s500-no?authuser=0">
+                    <img class="image3" id="imgRanBody" width="100%" height="100%"
+                        src="https://lh3.googleusercontent.com/pw/AM-JKLW3pgVOp6txNRQBSSWrHAeTCjAESp-_CHOTmaFdafXi5jsouDu4mNrB4yJ4-pXhWwzCOJV_W0HvLsjgPR5cCfVHCYfIMkvrtKOGAbC8u0BPz1zN_51kXszDMKskkesDWLEpfyReiGYUSyakM67iJJhR=s500-no?authuser=0">
+                </div>
+                <button id="btnRanImg" class="btn btn-secondary" style="width: 90%;">Đổi avatar</button>
+            </div>
+
+            <div class="col-2 text-center">
+
+                <button id="connectMM" class="btn btn-info" style="width: 90%; height: 60px; margin-top: 10px;">Đăng
+                    nhập MetaMask</button>
+                <button id="btnDangKy" class="btn btn-info" style="width: 90%; height: 60px; margin-top: 10px;">Đăng
+                    ký</button>
+            </div>
+        </div>
+
         <hr>
         <div class="row">
             <h5 style="width: 100%; text-align: center; margin-top: 10px; color: blue;">Danh sách học sinh đã đăng
